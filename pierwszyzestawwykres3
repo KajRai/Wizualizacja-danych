@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+tury = pd.read_excel("turystyka1.xlsx",index_col=None)
+tury = tury.T
+lab = ["Kategoria 5*","Kategoria 4*","Kategoria 3*","Kategoria 2*","Kategoria 1*"]
+t_2014 = tury[tury[0]==2014]
+t_2015 = tury[tury[0]==2015]
+t_2016 = tury[tury[0]==2016]
+t_2017 = tury[tury[0]==2017]
+t_2018 = tury[tury[0]==2018]
+t_2019 = tury[tury[0]==2019]
+plt.plot(lab, t_2016[1],label="Rok 2016",linestyle=":")
+plt.plot(lab,t_2015[1],label="Rok 2015",linestyle="--")
+plt.title("Mieszkania w turystykach (dane w m2)")
+plt.grid()
+plt.show()
+plt.legend()
+print(tury)
+print(t_2014)
